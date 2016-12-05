@@ -54,7 +54,7 @@ Please see [Karaf's documentation](http://karaf.apache.org/manual/latest)!
 ### Configure SSH host and port
 
 Karaf shell is configurable in `osgi/configs/org.apache.karaf.shell.cfg`:
-```
+```properties
 sshPort = 11211
 sshHost = 0.0.0.0
 ```
@@ -62,7 +62,7 @@ sshHost = 0.0.0.0
 ### Configure SSH user and password
 
 Karaf shell users, groups and passwords are configurable in `osgi/configs/users.properties`:
-```
+```properties
 #
 # This file contains the users, groups, and roles.
 # Each line has to be of the format:
@@ -83,7 +83,7 @@ _g_\:admingroup = group,admin,manager,viewer,systembundles
 ### Configure shell aliases
 
 The file `osgi/configs/shell.init.script` is run every time a connection to the console is made. This allows to set some aliases:
-```
+```properties
 lb = { bundle:list -t 0 $args } ;
 ls = { service:list $args } ;
 lc = { config:list "(service.pid=$args)" } ;
