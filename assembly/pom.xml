@@ -1,0 +1,87 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.commsen.liferay</groupId>
+		<artifactId>liferay-karaf</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>assembly</artifactId>
+	<packaging>pom</packaging>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>com.commsen.liferay.karaf.shell</groupId>
+			<artifactId>com.commsen.liferay.karaf.extensionbundle</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.karaf.shell</groupId>
+			<artifactId>org.apache.karaf.shell.ssh</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.karaf.bundle</groupId>
+			<artifactId>org.apache.karaf.bundle.core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.karaf.config</groupId>
+			<artifactId>org.apache.karaf.config.core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.karaf.jaas</groupId>
+			<artifactId>org.apache.karaf.jaas.command</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.karaf.package</groupId>
+			<artifactId>org.apache.karaf.package.core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.karaf.service</groupId>
+			<artifactId>org.apache.karaf.service.core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.karaf.system</groupId>
+			<artifactId>org.apache.karaf.system.core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.karaf.shell</groupId>
+			<artifactId>org.apache.karaf.shell.commands</artifactId>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<id>src</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<descriptors>
+								<descriptor>src/main/descriptors/liferay-karaf-shell.xml</descriptor>
+							</descriptors>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>
