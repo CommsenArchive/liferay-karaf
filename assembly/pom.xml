@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.commsen.liferay</groupId>
 		<artifactId>liferay-karaf</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.1</version>
 	</parent>
 
 	<artifactId>assembly</artifactId>
@@ -15,7 +15,7 @@
 		<dependency>
 			<groupId>com.commsen.liferay.karaf.shell</groupId>
 			<artifactId>com.commsen.liferay.karaf.extensionbundle</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>0.0.1</version>
 		</dependency>
 
 		<dependency>

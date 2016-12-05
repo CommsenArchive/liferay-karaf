@@ -4,7 +4,7 @@
 
 	<groupId>com.commsen.liferay</groupId>
 	<artifactId>liferay-karaf</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<packaging>pom</packaging>
 
 	<name>Liferay Karaf extension</name>
@@ -92,9 +92,7 @@
 	</scm>
 
 	<modules>
-		<module>
-			com.commsen.liferay.karaf.extensionbundle
-		</module>
+		<module>com.commsen.liferay.karaf.extensionbundle</module>
 		<module>assembly</module>
 	</modules>
 </project>
