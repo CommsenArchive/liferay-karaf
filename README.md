@@ -33,7 +33,7 @@ As per OSGi specification the framework MAY need a restart when such bundles is 
 There are 2 options:
 
  - Build it form source. Simply clone this repo and run `mvn package`. Then look for `assembly/target/liferay-karaf-<VERSION>.zip`
- - Download it form  __URL_PLACEHOLDER__
+ - Download it form [releases page](https://github.com/azzazzel/liferay-karaf/releases/)
 
 The zip file contains bundles in `osgi/modules` folder and configuration files in `osgi/configs`.
 
