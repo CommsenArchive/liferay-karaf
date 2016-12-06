@@ -23,7 +23,7 @@ The goal of this project it to add of some of the cool [Karaf](http://karaf.apac
 
 __WARNINIG: SYSTEM WILL SHUTDOWN IF ONE OF THE INSTALLED BUNDLES IS REMOVED!__
 
-One of the bundles delivered with this project (namely `com.commsen.liferay.karaf.extensionbundle-0.0.1-SNAPSHOT.jar`) is __OSGi framework extension__ bundle!
+One of the bundles delivered with this project (namely `com.commsen.liferay.karaf.extensionbundle`) is __OSGi framework extension__ bundle!
 As per OSGi specification the framework MAY need a restart when such bundles is installed (Liferay typically does not) and MUST shutdown if such bundle is removed!
 
 ---
