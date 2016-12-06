@@ -106,5 +106,6 @@
 	<modules>
 		<module>com.commsen.liferay.karaf.extensionbundle</module>
 		<module>assembly</module>
+		<module>demo-karaf-command</module>
 	</modules>
 </project>
