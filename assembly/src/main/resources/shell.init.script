@@ -27,3 +27,14 @@ lc = { config:list "(service.pid=$args)" } ;
 help = { *:help $args | more } ;
 man = { help $args } ;
 service:get = { $.context getService ($.context getServiceReference $args) };
+
+l_functions = { $.variables | grep --color never l_ }
+
+\#UserLocalService = { service:get com.liferay.portal.kernel.service.UserLocalService }
+l_users = { \
+  shell:printf '| %-20s | %-20s | %-20s |%n' 'First Name' 'Last Name' 'E-mail';\
+  shell:printf '| %-20s | %-20s | %-20s |%n' '--------------------' '--------------------' '--------------------' ;\
+  each ($UserLocalService users -1 -1)  { \
+    shell:printf '| %-20s | %-20s | %-20s |%n' ($it FirstName) ($it LastName) ($it DisplayEmailAddress)\
+  }
+}
