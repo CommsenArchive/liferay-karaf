@@ -91,6 +91,18 @@
 		<url>https://github.com/azzazzel/liferay-karaf</url>
 	</scm>
 
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.felix</groupId>
+					<artifactId>maven-bundle-plugin</artifactId>
+					<version>${maven.bundle.plugin.version}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
 	<modules>
 		<module>com.commsen.liferay.karaf.extensionbundle</module>
 		<module>assembly</module>
