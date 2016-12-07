@@ -28,10 +28,10 @@ help = { *:help $args | more } ;
 man = { help $args } ;
 service:get = { $.context getService ($.context getServiceReference $args) };
 
-l_functions = { $.variables | grep --color never l_ }
+liferay = { $.variables | grep --color never liferay: }
 
 \#UserLocalService = { service:get com.liferay.portal.kernel.service.UserLocalService }
-l_users = { \
+liferay:list_users = { \
   shell:printf '| %-20s | %-20s | %-20s |%n' 'First Name' 'Last Name' 'E-mail';\
   shell:printf '| %-20s | %-20s | %-20s |%n' '--------------------' '--------------------' '--------------------' ;\
   each ($UserLocalService users -1 -1)  { \
