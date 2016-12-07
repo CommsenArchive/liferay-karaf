@@ -86,6 +86,41 @@
 				<version>${apache.karaf.version}</version>
 			</dependency>
 
+			<dependency>
+				<groupId>org.apache.karaf.features</groupId>
+				<artifactId>org.apache.karaf.features.core</artifactId>
+				<version>${apache.karaf.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.karaf.features</groupId>
+				<artifactId>org.apache.karaf.features.command</artifactId>
+				<version>${apache.karaf.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.karaf.deployer</groupId>
+				<artifactId>org.apache.karaf.deployer.features</artifactId>
+				<version>${apache.karaf.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.karaf.log</groupId>
+				<artifactId>org.apache.karaf.log.core</artifactId>
+				<version>${apache.karaf.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.ops4j.pax.logging</groupId>
+				<artifactId>pax-logging-api</artifactId>
+				<version>${pax.logging.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.ops4j.pax.logging</groupId>
+				<artifactId>pax-logging-service</artifactId>
+				<version>${pax.logging.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 

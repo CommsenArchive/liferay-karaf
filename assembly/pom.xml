@@ -19,48 +19,43 @@
 			<version>0.0.2-SNAPSHOT</version>
 		</dependency>
 
-		<!-- Karaf shell -->
+		<!-- Karaf base -->
 
 		<dependency>
 			<groupId>org.apache.karaf.shell</groupId>
 			<artifactId>org.apache.karaf.shell.ssh</artifactId>
 		</dependency>
 
-		<!-- Karaf shell basic commands -->
-
 		<dependency>
-			<groupId>org.apache.karaf.bundle</groupId>
-			<artifactId>org.apache.karaf.bundle.core</artifactId>
+			<groupId>org.apache.karaf.log</groupId>
+			<artifactId>org.apache.karaf.log.core</artifactId>
 		</dependency>
 
 		<dependency>
-			<groupId>org.apache.karaf.config</groupId>
-			<artifactId>org.apache.karaf.config.core</artifactId>
+			<groupId>org.ops4j.pax.logging</groupId>
+			<artifactId>pax-logging-api</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.ops4j.pax.logging</groupId>
+			<artifactId>pax-logging-service</artifactId>
+		</dependency>
+		
+		<!-- Karaf features -->
+
+		<dependency>
+			<groupId>org.apache.karaf.features</groupId>
+			<artifactId>org.apache.karaf.features.core</artifactId>
 		</dependency>
 
 		<dependency>
-			<groupId>org.apache.karaf.jaas</groupId>
-			<artifactId>org.apache.karaf.jaas.command</artifactId>
+			<groupId>org.apache.karaf.features</groupId>
+			<artifactId>org.apache.karaf.features.command</artifactId>
 		</dependency>
 
 		<dependency>
-			<groupId>org.apache.karaf.package</groupId>
-			<artifactId>org.apache.karaf.package.core</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.karaf.service</groupId>
-			<artifactId>org.apache.karaf.service.core</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.karaf.system</groupId>
-			<artifactId>org.apache.karaf.system.core</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.karaf.shell</groupId>
-			<artifactId>org.apache.karaf.shell.commands</artifactId>
+			<groupId>org.apache.karaf.deployer</groupId>
+			<artifactId>org.apache.karaf.deployer.features</artifactId>
 		</dependency>
 
 	</dependencies>
