@@ -1,0 +1,59 @@
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.4.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.4.0 http://karaf.apache.org/xmlns/features/v1.4.0"
+	name="karaf-compat-features">
+
+
+	<feature 
+		name="karaf-compat-features" 
+		description="Composite feature of all compatibility features from Karaf"
+		version="${apache.karaf.version}">
+
+		<feature>shell-commands</feature>
+		<feature>scheduler</feature>
+		<feature>wrap</feature>
+		<feature>kar</feature>
+	</feature>
+
+	<feature 
+		name="shell-commands" 
+		description="Provides most of the shell commands from Karaf"
+		version="${apache.karaf.version}">
+
+		<bundle>mvn:org.apache.karaf.bundle/org.apache.karaf.bundle.core/${apache.karaf.version}</bundle>
+		<bundle>mvn:org.apache.karaf.config/org.apache.karaf.config.core/${apache.karaf.version}</bundle>
+		<bundle>mvn:org.apache.karaf.jaas/org.apache.karaf.jaas.command/${apache.karaf.version}</bundle>
+		<bundle>mvn:org.apache.karaf.package/org.apache.karaf.package.core/${apache.karaf.version}</bundle>
+		<bundle>mvn:org.apache.karaf.service/org.apache.karaf.service.core/${apache.karaf.version}</bundle>
+		<bundle>mvn:org.apache.karaf.system/org.apache.karaf.system.core/${apache.karaf.version}</bundle>
+		<bundle>mvn:org.apache.karaf.shell/org.apache.karaf.shell.commands/${apache.karaf.version}</bundle>
+		<bundle>mvn:org.jledit/core/0.2.1</bundle>
+	</feature>
+
+	<feature 
+		name="scheduler"
+		description="Provides scheduler service from Karaf"
+		version="${apache.karaf.version}">
+		
+		<bundle>mvn:org.apache.karaf.scheduler/org.apache.karaf.scheduler.core/${apache.karaf.version}</bundle>
+	</feature>
+
+	<feature 
+		name="wrap" 
+		description="Wrap URL handler"
+		version="${apache.karaf.version}">
+		
+        <bundle>mvn:org.ops4j.pax.url/pax-url-wrap/${pax.url.version}/jar/uber</bundle>
+    </feature>
+    
+    <feature 
+    	name="kar"
+    	description="Provides KAR deployer"
+		version="${apache.karaf.version}">
+
+		<bundle>mvn:org.apache.karaf.deployer/org.apache.karaf.deployer.kar/${apache.karaf.version}</bundle>
+		<bundle>mvn:org.apache.karaf.kar/org.apache.karaf.kar.core/${apache.karaf.version}</bundle>
+    
+    </feature>
+        
+</features>

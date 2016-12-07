@@ -1,0 +1,39 @@
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.4.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.4.0 http://karaf.apache.org/xmlns/features/v1.4.0"
+	name="devops-features">
+
+
+	<feature 
+		name="devops-features" 
+		description="Composite feature of all devops features"
+		version="${apache.karaf.version}">
+
+		<feature>jolokia</feature>
+		<feature>webconsole</feature>
+	</feature>
+   
+    <feature 
+    	name="jolokia" 
+    	description="Jolokia monitoring support" 
+		version="${jolokia.version}">
+
+		<!-- TODO add requirement on HTTP service via requirements and capabilities -->
+
+        <config name="org.jolokia.osgi">
+            org.jolokia.user=liferay
+            org.jolokia.realm=karaf
+            org.jolokia.authMode=jaas
+        </config>
+
+        <bundle>mvn:org.jolokia/jolokia-osgi/${jolokia.version}</bundle>
+    </feature>
+    
+   <feature 
+   		name="webconsole" 
+   		description="Felix WebConsole" 
+   		version="4.2.16">
+
+        <bundle>mvn:org.apache.felix/org.apache.felix.webconsole/4.2.16</bundle>
+    </feature>    
+</features>
