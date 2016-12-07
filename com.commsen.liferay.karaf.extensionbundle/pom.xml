@@ -3,12 +3,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.commsen.liferay</groupId>
-		<artifactId>liferay-karaf</artifactId>
+		<artifactId>karaf</artifactId>
 		<version>0.0.2-SNAPSHOT</version>
 	</parent>
 
-	<groupId>com.commsen.liferay.karaf.shell</groupId>
+	<groupId>com.commsen.liferay.karaf</groupId>
 	<artifactId>com.commsen.liferay.karaf.extensionbundle</artifactId>
+	<name>Framework Extension :: Karaf env setup</name>
 	<packaging>bundle</packaging>
 
 	<dependencies>
