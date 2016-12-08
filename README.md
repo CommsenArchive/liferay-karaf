@@ -1,94 +1,48 @@
-# Liferay Karaf extension
+# Liferay Karaf compatibility layer (v 0.0.2)
 
-The goal of this project it to add of some of the cool [Karaf](http://karaf.apache.org/)'s functionalities into Liferay!
+The goal of this project it to make some of the cool [Karaf](http://karaf.apache.org/)'s functionalities available in Liferay 7!
+
 
 ## What does it add
 
- - SSH shell
- - Shell commands in the following sub-shells:
-   - bundle: - allows to inspect and manage OSGi bundles
-   - config: - allows to inspect and modify configurations
-   - jaas: - allows to inspect and modify JAAS realms
-   - package: - shows imported / exported packages
-   - shell: - advanced shell commands
-   - system: - allows to inspect and modify system properties
- - Init shell script executed at startup in each shell session
- - Command / parameter autocompletion
- - Command details with `<command> --help` and `man <command>`
- - Ability to deploy more Karaf commands  
-
+ - [SSH into Karaf shell](docs/ssh_into_liferay.md)
+ - [Karaf shell commands](docs/commands.md)
+ - [Init shell script](docs/init_shell_script.md) executed at startup in each shell session
+ - [Support for features](docs/features.md)
+ - [Posix style custom commands](docs/custom_commads.md) with help and autocompletion _(even for arguments and options)_
+ 
 ## Installation
 
----
 
-__WARNINIG: SYSTEM WILL SHUTDOWN IF ONE OF THE INSTALLED BUNDLES IS REMOVED!__
+
+__WARNINIG: LIFERAY WILL SHUTDOWN IF ONE OF THE BUNDLES INSTALLED BY THIS EXTENSION IS LATER ON REMOVED!__
 
 One of the bundles delivered with this project (namely `com.commsen.liferay.karaf.extensionbundle`) is __OSGi framework extension__ bundle!
-As per OSGi specification the framework MAY need a restart when such bundles is installed (Liferay typically does not) and MUST shutdown if such bundle is removed!
+As per OSGi specification the framework 
+ - MAY need to restart when such bundle is installed _(Liferay uses Equinox which does not)_
+ - MUST shutdown if such bundle is removed!
 
 ---
 
-### Get the extension
+There are 2 options to get the artifact:
 
-There are 2 options:
-
- - Build it form source. Simply clone this repo and run `mvn package`. Then look for `assembly/target/liferay-karaf-<VERSION>.zip`
+ - Build it form source by cloning this repo and running `mvn package`. Then look for `assembly/target/liferay-karaf-<VERSION>.zip`
  - Download it form [releases page](https://github.com/azzazzel/liferay-karaf/releases/)
 
 The zip file contains bundles in `osgi/modules` folder and configuration files in `osgi/configs`.
 
-### Installation
+Once you have `liferay-karaf-<VERSION>.zip` simply extract it in your `<LIFERAY_7_HOME>` folder! That's it!
 
-Simply extract the file in your `<LIFERAY_7_HOME>/` folder! That's it!
-
-## Connect to console
-
-Simply SSH to your server. Default port is `11211`, default user is `liferay` with default password of `test`!
-
-## Using the console
-
-Please see [Karaf's documentation](http://karaf.apache.org/manual/latest)!
 
 ## Configuration
 
-### Configure SSH host and port
+The following configuration files are installed by this extension: 
 
-Karaf shell is configurable in `osgi/configs/org.apache.karaf.shell.cfg`:
-```properties
-sshPort = 11211
-sshHost = 0.0.0.0
-```
+ - [branding-ssh.properties](assembly/src/main/resources/branding-ssh.properties) - Branding remote shell 
+ - [org.apache.karaf.features.cfg](assembly/src/main/resources/org.apache.karaf.features.cfg) - Configuring features
+ - [org.apache.karaf.features.repos.cfg](assembly/src/main/resources/org.apache.karaf.features.repos.cfg) - Friendly names for features repositories
+ - [org.apache.karaf.log.cfg](assembly/src/main/resources/org.apache.karaf.log.cfg) - Configuring Karaf's logging format
+ - [org.apache.karaf.shell.cfg](assembly/src/main/resources/org.apache.karaf.shell.cfg) - Configuring Karaf's shell (SSH host, port, etc.)
+ - [org.ops4j.pax.logging.cfg](assembly/src/main/resources/org.ops4j.pax.logging.cfg) -  Configuring Karaf's log appenders
+ - [org.apache.karaf.features.cfg](assembly/src/main/resources/org.apache.karaf.features.cfg) - Configuring features service
 
-### Configure SSH user and password
-
-Karaf shell users, groups and passwords are configurable in `osgi/configs/users.properties`:
-```properties
-#
-# This file contains the users, groups, and roles.
-# Each line has to be of the format:
-#
-# USER=PASSWORD,ROLE1,ROLE2,...
-# USER=PASSWORD,_g_:GROUP,...
-# _g_\:GROUP=ROLE1,ROLE2,...
-#
-# All users, groups, and roles entered in this file are available after Karaf startup
-# and modifiable via the JAAS command group. These users reside in a JAAS domain
-# with the name "karaf".
-#
-liferay = test,_g_:admingroup
-_g_\:admingroup = group,admin,manager,viewer,systembundles
-
-```
-
-### Configure shell aliases
-
-The file `osgi/configs/shell.init.script` is run every time a connection to the console is made. This allows to set some aliases:
-```properties
-lb = { bundle:list -t 0 $args } ;
-ls = { service:list $args } ;
-lc = { config:list "(service.pid=$args)" } ;
-help = { *:help $args | more } ;
-man = { help $args } ;
-service:get = { $.context getService ($.context getServiceReference $args) };
-```
-or execute custom initialization code.
