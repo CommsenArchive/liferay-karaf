@@ -25,6 +25,7 @@
 	
 	<fileSets>
 		<fileSet>
+			<filtered>true</filtered>
 			<outputDirectory>/osgi/configs</outputDirectory>
 			<directory>src/main/resources</directory>
 		</fileSet>
