@@ -20,12 +20,13 @@
 					<executions>
 						<execution>
 							<id>copy-resources</id>
-							<phase>validate</phase>
+							<phase>process-resources</phase>
 							<goals>
 								<goal>copy-resources</goal>
 							</goals>
 							<configuration>
-								<outputDirectory>${basedir}/target/feature</outputDirectory>
+								<outputDirectory>${basedir}</outputDirectory>
+								<fileNameFiltering>true</fileNameFiltering>
 								<resources>
 									<resource>
 										<directory>src/main/feature</directory>
@@ -49,16 +50,21 @@
 							<configuration>
 								<artifacts>
 									<artifact>
-										<file>target/feature/features.xml</file>
+										<file>features-${release.version}.xml</file>
 										<classifier>features</classifier>
 										<type>xml</type>
 									</artifact>
 								</artifacts>
 							</configuration>
 						</execution>
+						<execution>
+							<id>parse-version</id>
+							<goals>
+								<goal>parse-version</goal>
+							</goals>
+						</execution>
 					</executions>
 				</plugin>
-
 			</plugins>
 		</pluginManagement>
 	</build>
