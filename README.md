@@ -2,6 +2,8 @@
 
 The goal of this project it to make some of the cool [Karaf](http://karaf.apache.org/)'s functionalities available in Liferay 7!
 
+See "[Wait, there is Gogo shell, why install another one?](docs/why_karaf_shell.md)" for some ideas what you can do with it!
+
 ## What does it add
 
  - [SSH into Karaf shell](docs/ssh_into_liferay.md)
@@ -10,7 +12,6 @@ The goal of this project it to make some of the cool [Karaf](http://karaf.apache
  - [Support for features](docs/features.md)
  - [Posix style custom commands](docs/custom_commands.md) with help and autocompletion _(even for arguments and options)_
  
- See also "[Wait, there is Gogo shell, why install another one?](docs/why_karaf_shell)" for some ideas what you can do with it!
  
 ## Installation
 
