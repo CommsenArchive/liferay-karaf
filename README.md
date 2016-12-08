@@ -9,7 +9,7 @@ The goal of this project it to make some of the cool [Karaf](http://karaf.apache
  - [Karaf shell commands](docs/commands.md)
  - [Init shell script](docs/init_shell_script.md) executed at startup in each shell session
  - [Support for features](docs/features.md)
- - [Posix style custom commands](docs/custom_commads.md) with help and autocompletion _(even for arguments and options)_
+ - [Posix style custom commands](docs/custom_commands.md) with help and autocompletion _(even for arguments and options)_
  
 ## Installation
 
