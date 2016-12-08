@@ -3,7 +3,7 @@
 
 	<groupId>com.commsen.liferay</groupId>
 	<artifactId>karaf</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Liferay Karaf compatibility layer</name>
@@ -130,7 +130,7 @@
 	<scm>
 		<developerConnection>scm:git:ssh://azzazzel.github.com/azzazzel/liferay-karaf</developerConnection>
 		<url>https://github.com/azzazzel/liferay-karaf</url>
-	  <tag>v0.0.2</tag>
+	  <tag>HEAD</tag>
   </scm>
 
 	<distributionManagement>
