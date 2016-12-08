@@ -278,7 +278,7 @@ Name                                                                            
 -------------------------------------------------------------------------------------------------------------------------------
 reminder                                                                                  | at(2016-12-08T18:50:00Z)
 org.apache.karaf.scheduler.command.support.ScriptJob:c1933430-6d93-4285-9c22-67b430d35ad6 | at(2016-12-08T17:50:52.986Z, 5, 10)
-```
+
 printing 5 times every 10 seconds
 printing 5 times every 10 seconds
 printing 5 times every 10 seconds
