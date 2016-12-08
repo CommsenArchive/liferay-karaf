@@ -49,7 +49,7 @@ When installed, this command
 
  - displays nice help screen
  
- ```shell
+ ```ShellSession
  liferay@root>demo:hello --help
 DESCRIPTION
         demo:hello
@@ -72,7 +72,7 @@ OPTIONS
  
  - updates subshell's help screen
  
- ```
+ ```ShellSession
  liferay@root>demo --help
 SUBSHELL
 	demo

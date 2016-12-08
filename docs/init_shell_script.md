@@ -19,7 +19,7 @@ service:get = { $.context getService ($.context getServiceReference $args) };
 
 Furthermore it allows to define functions and provide aliases to them. For example this
 
-```shell
+```properties
 \#UserLocalService = { service:get com.liferay.portal.kernel.service.UserLocalService }
 liferay:list_users = { \
   shell:printf '| %-20s | %-20s | %-20s |%n' 'First Name' 'Last Name' 'E-mail';\
@@ -32,7 +32,7 @@ liferay:list_users = { \
 
 defines a function that gets users by calling Liferay's `UserLocalService` and prints the result in a table (using [shell subshell](docs/commands.md#shell-subshell)). Executing `liferay:list_users` would therefore print something like this:
 
-```shell
+```ShellSession
 liferay@root>liferay:list_users
 | First Name           | Last Name            | E-mail               |
 | -------------------- | -------------------- | -------------------- |

@@ -1,7 +1,8 @@
 # Connect to Liferay Karaf shell via SSH
 
 Liferay Karaf compatibility layer exposes Karaf shell that users can connect to via any SSH client. For the purpose of an example lets assume there is Liferay instance running on `my-portal.com` and Karaf shell is available on port `11211`. User `liferay` can connect from any linux machine simply by doing
-```
+
+```ShellSession
 ssh liferay@my-portal.com -p 11211
 ```
 

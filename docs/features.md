@@ -39,7 +39,7 @@ Therefore features repositories provided with this compatibility layer is limite
 
  Friendly names for feature repositories can be configured via `org.apache.karaf.features.repos` service pid. By default this extensions installs `<LIFERAY_7_NOME>/osgi/configs/org.apache.karaf.features.repos.cfg` file in which there are two repositories defined:
  
-```
+```properties
 karaf-compat=https://raw.githubusercontent.com/azzazzel/liferay-karaf/master/features/karaf-compat-features/features-${release.version}.xml
 devops=https://raw.githubusercontent.com/azzazzel/liferay-karaf/master/features/devops-features/features-${release.version}.xml
 ```
@@ -56,7 +56,7 @@ devops=https://raw.githubusercontent.com/azzazzel/liferay-karaf/master/features/
  
 Which repositories will be automatically added and which of their features will be automatically started __(when features service starts)__ is defined in `org.apache.karaf.features` configuration. By default this extensions installs `<LIFERAY_7_NOME>/osgi/configs/org.apache.karaf.features.cfg` file with following configuration:
 
-```
+```properties
 featuresRepositories = \
     https://raw.githubusercontent.com/azzazzel/liferay-karaf/master/features/karaf-compat-features/features-${release.version}.xml
 featuresBoot = \
