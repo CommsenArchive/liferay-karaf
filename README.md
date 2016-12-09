@@ -41,10 +41,9 @@ Once you have `liferay-karaf-<VERSION>.zip` simply extract it in your `<LIFERAY_
 The following configuration files are installed by this extension: 
 
  - [branding-ssh.properties](assembly/src/main/resources/branding-ssh.properties) - Branding remote shell 
- - [org.apache.karaf.features.cfg](assembly/src/main/resources/org.apache.karaf.features.cfg) - Configuring features
+ - [org.apache.karaf.features.cfg](assembly/src/main/resources/org.apache.karaf.features.cfg) - Configuring features service
  - [org.apache.karaf.features.repos.cfg](assembly/src/main/resources/org.apache.karaf.features.repos.cfg) - Friendly names for features repositories
  - [org.apache.karaf.log.cfg](assembly/src/main/resources/org.apache.karaf.log.cfg) - Configuring Karaf's logging format
  - [org.apache.karaf.shell.cfg](assembly/src/main/resources/org.apache.karaf.shell.cfg) - Configuring Karaf's shell (SSH host, port, etc.)
  - [org.ops4j.pax.logging.cfg](assembly/src/main/resources/org.ops4j.pax.logging.cfg) -  Configuring Karaf's log appenders
- - [org.apache.karaf.features.cfg](assembly/src/main/resources/org.apache.karaf.features.cfg) - Configuring features service
 
